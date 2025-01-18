@@ -33,6 +33,7 @@ Sequence:
 - 4o-mini with reasoning
 
 ![4o-mini-reason](plots/data_reason_4o_mini.png)
+
 Notice performance in QUADRATIC_MULTI
 
 - 4o plain
@@ -43,3 +44,7 @@ Notice performance in QUADRATIC_MULTI
 
 ![4o-reason](plots/data_reason_4o.png)
 
+## Bigger experiment
+50 samples per category, linear_simple and exponential discarded, on 4o-mini
+
+![4o-big-experiment](plots/data_large.png)

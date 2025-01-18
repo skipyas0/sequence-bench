@@ -1,7 +1,4 @@
 templates = {
-    "LINEAR_SIMPLE": """def sequence_item(i):
-    return {a1}*i + {b1}""",
-
     "LINEAR_MULTI": """def sequence_item(i):
         if i < {q}:
             return {a1}*i + {b1}
@@ -39,7 +36,4 @@ templates = {
 
     "LINEAR_MODULO": """def sequence_item(i):
     return ({a1}*i + {b1}) % {q}""",
-
-    "EXPONENTIAL": """def sequence_item(i):
-    return {a1}**i""",
 }

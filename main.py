@@ -4,7 +4,7 @@ import json
 
 N = 10
 COEF_TH = 5
-SAMPLES_PER_TEMPLATE = 5
+SAMPLES_PER_TEMPLATE = 50
 
 def generate_from_template(template: str) -> tuple[list[int], str]:
     kwargs = {v: randint(-COEF_TH, COEF_TH) for v in ["b1", "b2", "b3", "c1", "c2", "c3"]}
@@ -29,5 +29,5 @@ if __name__ == "__main__":
                 "answer": func
             })
         data[template_name] = samples
-    with open("data.json", "w+") as f:
+    with open("data_large.json", "w+") as f:
         json.dump(data, f, indent=4,  separators=(',', ': '))

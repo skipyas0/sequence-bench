@@ -30,7 +30,7 @@ Sequence:
 def get_attempts(ds, template):
     with open(ds, "r") as f:
         data = json.load(f)
-    m = ModelAPI("gpt-4o")
+    m = ModelAPI("gpt-4o-mini")
     for category, cat_data in data.items():
         for i, sample in enumerate(cat_data):
             seq = sample['question']
@@ -123,7 +123,7 @@ def plot(ds):
     plt.savefig("plots/"+ds.replace('json', 'png'))
 
 if __name__ == '__main__':
-    ds = "data.json"
-    get_attempts(ds, PROMPT)
+    ds = "data_large.json"
+    get_attempts(ds, PROMPT_REASON)
     evaluate(ds)
     plot(ds)
