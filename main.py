@@ -1,12 +1,14 @@
 from templates import templates
 from random import randint
 import json
-N = 25
+
+N = 10
 COEF_TH = 5
-SAMPLES_PER_TEMPLATE = 100
+SAMPLES_PER_TEMPLATE = 5
 
 def generate_from_template(template: str) -> tuple[list[int], str]:
-    kwargs = {v: randint(-COEF_TH, COEF_TH) for v in ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"]}
+    kwargs = {v: randint(-COEF_TH, COEF_TH) for v in ["b1", "b2", "b3", "c1", "c2", "c3"]}
+    kwargs.update({v: randint(1,COEF_TH) for v in ["a1", "a2", "a3"]})
     kwargs.update({"q": randint(1, N)})
     func = template.format(**kwargs)
     exec(func, globals())
